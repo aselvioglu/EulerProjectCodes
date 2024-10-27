@@ -1,0 +1,43 @@
+// By Aydın Selvioğlu
+// Computes the sum of even fibonacci terms, written in C
+
+#include <stdio.h>
+
+int main()
+{
+long evens [50];
+long fibo [100];
+ long first=1;
+ long second=2;
+ int i=0;
+ long sum=2;
+ fibo[0]=first;
+ fibo[1]=second;
+ int j=0;
+ while (second<4000000){
+     
+    
+     long temp=second;
+     second=first+second;
+     fibo[j+2]=second;
+     first=temp;
+     printf("fibo %lu \n", fibo[j]);
+     j++;
+   
+      if((first%2==1 && second%2==1)){
+          evens[i]=second+first;
+          sum+=evens[i];
+          printf("%lu and sum: %lu \n", evens[i], sum);
+          i++;
+      }
+     
+ }
+
+ return 0; }
+ 
+ 
+ 
+ 
+    
+    return 0;
+}
